@@ -1,0 +1,23 @@
+@import url('../../../../styles/variables.css');
+
+.lang-menu-btn{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: var(--fst-transition);
+	margin: 0px 20px;
+	user-select: none;
+}
+
+.lang-menu-btn svg{
+	width: 15px;
+	fill: var(--grey-text);
+	transition: var(--fst-transition);
+}
+
+.lang-menu-btn:hover{
+	background: var(--ultra-light-accent)
+}

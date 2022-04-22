@@ -1,0 +1,42 @@
+@import url('../../../styles/variables.css');
+
+.route{
+	min-width: 92px;
+	height: 36px;
+	padding: 0px 15px 0px 11px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	background: var(--white);
+	border-radius: 4px;
+	border: 1px solid var(--border-color);
+	outline: none;
+	text-decoration: none;
+}
+
+
+.title{
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--main-accent);
+}
+
+.icon{
+	margin-right: 8px;
+	width: 18px;
+	height: 18px;
+	fill: var(--main-accent);
+}
+
+.route:hover .title{color: var(--dark-accent)}
+.route:hover .icon{fill: var(--dark-accent)}
+.route:hover {background: var(--ultra-light-accent)}
+
+.route:focus {border: 1px solid var(--dark-accent)}
+
+.route.active {background: var(--light-accent)}
+
+
+.route, .title, .icon{transition: var(--fst-transition)}

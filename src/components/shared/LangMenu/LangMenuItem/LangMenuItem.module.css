@@ -1,0 +1,66 @@
+@import url('../../../../styles/variables.css');
+
+.lang-menu-item{
+	height: 48px;
+	padding: 0px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	transition: var(--fst-transition);
+	user-select: none;
+}
+
+.lang-menu-item::after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	width: 0;
+	height: 2px;
+	background: var(--main-accent);
+	transform: translateX(-50%);
+	transition: var(--fst-transition);
+}
+
+
+.lang-menu-item-input{
+	display: none;
+}
+
+.lang-menu-item-name{
+	text-transform: uppercase;
+	color: var(--grey-text);
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: .0178571429em;
+	transition: var(--fst-transition);
+}
+
+
+/*Active*/
+.lang-menu-item.checked .lang-menu-item-name{
+	color: var(--main-accent);
+}
+
+.lang-menu-item.checked::after{
+	width: 100%;
+}
+
+/*ordinary hover*/
+.lang-menu-item:hover{
+	background: var(--ultra-light-accent);
+}
+.lang-menu-item:hover .lang-menu-item-name{
+	color: var(--dark-accent);
+}
+/*active hover*/
+.lang-menu-item.checked:hover::after{
+	background: var(--dark-accent);
+}
+
+
+
+
+

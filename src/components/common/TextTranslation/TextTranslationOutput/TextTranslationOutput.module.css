@@ -1,0 +1,67 @@
+@import url('../../../../styles/variables.css');
+
+.output {
+	width: 50%;
+	border-left: 1px solid var(--border-color);
+	padding: 20px 58px 20px 24px;
+	font-size: 24px;
+	line-height: 32px;
+	transition: var(--fst-transition);
+	position: relative;
+}
+
+.output-small {
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.output-active{
+	background: var(--grey);
+}
+
+.copy-btn{
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	transition: var(--fst-transition);
+}
+
+.copy-btn-success {background: rgba(30, 178, 30, 0.64)}
+.copy-btn-error{background: rgba(183, 29, 29, 0.63)}
+
+.copy-btn svg{
+	width: 25px;
+}
+
+/*disabled*/
+.copy-btn:disabled{
+	cursor: unset;
+	background: var(--grey);
+}
+
+.copy-btn:disabled svg{
+	fill: var(--grey-text);
+}
+
+.copy-btn:disabled:hover{background: var(--grey);}
+.copy-btn:disabled:hover svg{fill: var(--grey-text);}
+
+/*Hover*/
+.copy-btn:hover{
+	background: var(--ultra-light-accent);
+}
+
+.copy-btn:hover svg{
+	fill: var(--grey-text);
+}
+
+.copy-btn-success:hover {background: rgba(30, 178, 30, 0.64)}
+.copy-btn-error:hover{background: rgba(183, 29, 29, 0.63)}
+

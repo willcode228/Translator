@@ -1,0 +1,11 @@
+@import url('../../../styles/variables.css');
+
+.nav {
+	padding: 20px 48px 80px 48px;
+	background: var(--grey);
+	border-bottom: 1px solid var(--border-color);
+}
+
+.nav a{
+	margin-right: 8px;
+}

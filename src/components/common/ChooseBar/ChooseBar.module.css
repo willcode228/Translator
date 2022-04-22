@@ -1,0 +1,14 @@
+@import url('../../../styles/variables.css');
+
+.bar{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	max-width: 100%;
+	z-index: 999;
+
+	display: flex;
+	flex-wrap: wrap;
+	background: var(--white);
+}

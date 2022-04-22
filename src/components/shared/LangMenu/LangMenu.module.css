@@ -1,0 +1,13 @@
+.lang-menu {
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+}
+
+.lang-menu-vertical {
+	min-height: 300px;
+	padding: 20px;
+	flex-wrap: wrap;
+	overflow-x: unset;
+	gap: 20px;
+}

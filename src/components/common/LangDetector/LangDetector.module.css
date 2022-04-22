@@ -1,0 +1,30 @@
+@import url('../../../styles/variables.css');
+
+.detector {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.detector__exchange-btn{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: var(--fst-transition);
+	margin: 0 24px;
+}
+
+.detector__exchange-btn svg{
+	width: 24px;
+	height: 18px;
+	fill: var(--grey-text);
+}
+
+.detector__exchange-btn:hover{
+	background: var(--ultra-light-accent)
+}
