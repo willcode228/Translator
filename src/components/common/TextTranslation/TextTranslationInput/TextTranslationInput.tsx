@@ -8,7 +8,9 @@ import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 export const TextTranslationInput = () => {
 	const dispatch = useDispatch();
 	const [value, setValue] = useState('');
-	const {targetActiveItem, sourceActiveItem} = useTypedSelector(state => state.detectorLang);
+	const {targetActiveItem, sourceActiveItem, sourcePanelLangs, targetPanelLangs} = useTypedSelector(state => state.detectorLang);
+	const target = targetPanelLangs[targetActiveItem];
+	const source = sourcePanelLangs[sourceActiveItem];
 	const debounceGetTranslate = useCallback(_.debounce((q: string) => {
 		dispatch(setTargetTranslate(q));
 	}, 1000), []);
@@ -17,7 +19,7 @@ export const TextTranslationInput = () => {
 		if(value) {
 			dispatch(setTargetTranslate(value));
 		}
-	}, [targetActiveItem, sourceActiveItem]);
+	}, [target, source]);
 
 	const handleChange = (q: string) => {
 		setValue(q);

@@ -28,7 +28,6 @@ const LangDetector = () => {
 	}
 
 	const exchangeActiveLang = () => {
-		// TODO make this function add language to active if panel don't have
 		dispatch(setTargetActiveItem(sourceActiveItem));
 		dispatch(setSourceActiveItem(targetActiveItem));
 	}
