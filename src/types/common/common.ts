@@ -5,8 +5,12 @@ export interface ILang {
 	name: string;
 }
 
-export interface ITranslated {
+export interface ITranslatedText {
 	translatedText: string;
+}
+
+export interface ITranslatedFile {
+	translatedFileUrl: string;
 }
 
 export type menuType = langType.TARGET | langType.SOURCE;

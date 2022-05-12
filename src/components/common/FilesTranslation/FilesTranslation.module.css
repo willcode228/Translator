@@ -26,7 +26,8 @@
 	margin-top: 8px;
 }
 
-.files p.files-btn{
+.files p.files-btn,
+.files button.files-btn{
 	display: inline-block;
 	background: var(--main-accent);
 	border-radius: 4px;
@@ -40,10 +41,15 @@
 	padding: 10px 12px;
 	color: var(--white);
 	transition: var(--fst-transition);
-
 }
 
-.files p.files-btn:hover{
+.files button.files-btn {
+	padding: 0px 16px;
+	margin: 16px 0 0 0;
+}
+
+.files p.files-btn:hover,
+.files button.files-btn:hover{
 	box-shadow: 0px 1px 2px var(--main-accent);
 }
 
@@ -51,6 +57,9 @@
 .files__container{
 	flex-grow: 1;
 	max-width: 640px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
 .files__card{

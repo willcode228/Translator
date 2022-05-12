@@ -4,36 +4,36 @@ import {useTypedSelector} from "../../../../hooks/useTypedSelector";
 import {ReactComponent as CopyIcon} from "../../../../assets/copy.svg";
 
 export const TextTranslationOutput = () => {
-	const {target, loading} = useTypedSelector(state => state.translate);
+	const {targetText, loading} = useTypedSelector(state => state.translate);
 	const [isCopySuccess, setIsCopySuccess] = useState<boolean | 10>(10);
 
 	return (
 		<div
 			className={`
 				${styles['output']}
-				${target.length >= 120 && styles['output-small']}
-				${target.length > 0 && styles['output-active']}
+				${targetText.length >= 120 && styles['output-small']}
+				${targetText.length > 0 && styles['output-active']}
 			`}
 		>
 			<div>
-				{!loading && !target && 'Translation'}
+				{!loading && !targetText && 'Translation'}
 
 				{loading
 					? 'Loading result...'
-					: target
+					: targetText
 				}
 			</div>
 
 
 			<button
-				disabled={!loading && !target}
+				disabled={!loading && !targetText}
 				className={`
 					${styles['copy-btn']} 
 					${isCopySuccess && isCopySuccess !== 10 && styles['copy-btn-success']}
 					${!isCopySuccess && styles['copy-btn-error']}
 				`}
 				onClick={() => {
-					navigator.clipboard.writeText(target)
+					navigator.clipboard.writeText(targetText)
 						.then(() => setIsCopySuccess(true))
 						.catch(() => setIsCopySuccess(false))
 						.finally(() => {

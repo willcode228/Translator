@@ -7,7 +7,6 @@ export const rootApi = axios.create({
 	baseURL: URL,
 	params: {
 		'accept': 'application/json',
-		'Content-Type': 'application/x-www-form-urlencoded',
 		'api_key': KEY,
 	}
 });

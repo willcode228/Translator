@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
 import styles from './FilesTranslation.module.css';
 import {ReactComponent as FileIcon} from '../../../assets/file-translate.svg';
+import {useDispatch} from "react-redux";
+import {setTargetTranslate} from "../../../store/Translate/thunks";
+import {useTypedSelector} from "../../../hooks/useTypedSelector";
+import {setTargetTranslateFileSuccess} from "../../../store/Translate/actions";
 
 export const FilesTranslation = () => {
+	const dispatch = useDispatch();
+	const {loading, targetFile} = useTypedSelector(state => state.translate);
 	const [file, setFile] = useState<FileList | null>(null);
-	// console.log(file?.item(0).);
+	const fileSize = file?.item(0)?.size || 0;
+	const formatFileSize = fileSize > 999 ? `${Math.round(fileSize / 1000)} КБ` : `${fileSize} Б`;
 
 	if(file) {
 		return (
@@ -16,7 +23,7 @@ export const FilesTranslation = () => {
 
 						<div className={styles['files__card-box']}>
 							<h2>{file.item(0)?.name}</h2>
-							<p>{file.item(0)?.size} Б</p>
+							<p>{formatFileSize}</p>
 						</div>
 
 						<button
@@ -27,6 +34,24 @@ export const FilesTranslation = () => {
 						</button>
 					</div>
 
+					<button
+						disabled={loading}
+						className={styles['files-btn']}
+						onClick={() => {
+							if(targetFile) {
+								document.location.href = targetFile;
+								dispatch(setTargetTranslateFileSuccess(''));
+								setFile(null);
+							} else {
+								dispatch(setTargetTranslate(file))
+							}
+						}}
+					>
+						{targetFile
+							? 'Скачать перевод'
+							: !loading ? 'Перевести' : 'Идет перевод'
+						}
+					</button>
 				</div>
 			</div>
 		)

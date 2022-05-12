@@ -2,7 +2,8 @@ import {actionTypes, IInitialTranslate, translateAction} from "../../types/store
 
 const initialState: IInitialTranslate = {
 	source: '',
-	target: '',
+	targetText: '',
+	targetFile: '',
 	loading: false,
 }
 
@@ -13,10 +14,15 @@ export const translateReducer = (state = initialState, action: translateAction):
 				...state,
 				source: action.payload
 			}
-		case actionTypes.SET_TARGET_TRANSLATE:
+		case actionTypes.SET_TARGET_TRANSLATE_FILE:
 			return {
 				...state,
-				target: action.payload
+				targetFile: action.payload
+			}
+		case actionTypes.SET_TARGET_TRANSLATE_TEXT:
+			return {
+				...state,
+				targetText: action.payload
 			}
 		case actionTypes.SET_TARGET_TRANSLATE_LOADING:
 			return {
